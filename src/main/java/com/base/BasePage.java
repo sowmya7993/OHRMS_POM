@@ -97,142 +97,152 @@ public class BasePage {
 //		}
 	}
 	
-	public void hitEnter(WebDriver driver,String locatortype,String locatorvalue) {
+	public void hitEnter(WebDriver driver,WebElement elementtohitenter) {
 
-		if(locatortype.equalsIgnoreCase("id")){
-			driver.findElement(By.id(locatorvalue)).sendKeys(Keys.ENTER);
-		}
-		else if(locatortype.equalsIgnoreCase("name")){
-			driver.findElement(By.name(locatorvalue)).sendKeys(Keys.ENTER);
-		}
-		else if(locatortype.equalsIgnoreCase("classname")){
-			driver.findElement(By.className(locatorvalue)).sendKeys(Keys.ENTER);
-		}else if(locatortype.equalsIgnoreCase("cssselector")){
-			driver.findElement(By.cssSelector(locatorvalue)).sendKeys(Keys.ENTER);
-		}else if(locatortype.equalsIgnoreCase("linktext")){
-			driver.findElement(By.linkText(locatorvalue)).sendKeys(Keys.ENTER);
-		}else if(locatortype.equalsIgnoreCase("partiallinktext")){
-			driver.findElement(By.partialLinkText(locatorvalue)).sendKeys(Keys.ENTER);
-		}else if(locatortype.equalsIgnoreCase("xpath")){
-			driver.findElement(By.xpath(locatorvalue)).sendKeys(Keys.ENTER);
-		}
+//		if(locatortype.equalsIgnoreCase("id")){
+//			driver.findElement(By.id(locatorvalue)).sendKeys(Keys.ENTER);
+//		}
+//		else if(locatortype.equalsIgnoreCase("name")){
+//			driver.findElement(By.name(locatorvalue)).sendKeys(Keys.ENTER);
+//		}
+//		else if(locatortype.equalsIgnoreCase("classname")){
+//			driver.findElement(By.className(locatorvalue)).sendKeys(Keys.ENTER);
+//		}else if(locatortype.equalsIgnoreCase("cssselector")){
+//			driver.findElement(By.cssSelector(locatorvalue)).sendKeys(Keys.ENTER);
+//		}else if(locatortype.equalsIgnoreCase("linktext")){
+//			driver.findElement(By.linkText(locatorvalue)).sendKeys(Keys.ENTER);
+//		}else if(locatortype.equalsIgnoreCase("partiallinktext")){
+//			driver.findElement(By.partialLinkText(locatorvalue)).sendKeys(Keys.ENTER);
+//		}else if(locatortype.equalsIgnoreCase("xpath")){
+//			driver.findElement(By.xpath(locatorvalue)).sendKeys(Keys.ENTER);
+//		}
+		
+		elementtohitenter.sendKeys(Keys.ENTER);
+	}
+	
+	public void selectAction(WebDriver driver,WebElement dropdown,String optionToSelect) {
+//		if(locatortype.equalsIgnoreCase("id")){
+//			
+//			WebElement drpdown=driver.findElement(By.id(locatorvalue));
+//			Select s=new Select(drpdown);
+//			
+//			s.selectByVisibleText(optionToSelect);
+//			
+//		}
+//		else if(locatortype.equalsIgnoreCase("name")){
+//			WebElement drpdown=driver.findElement(By.name(locatorvalue));
+//			Select s=new Select(drpdown);
+//			
+//			s.selectByVisibleText(optionToSelect);
+//		}
+//		else if(locatortype.equalsIgnoreCase("classname")){
+//			WebElement drpdown=driver.findElement(By.className(locatorvalue));
+//			Select s=new Select(drpdown);
+//			
+//			s.selectByVisibleText(optionToSelect);
+//		}else if(locatortype.equalsIgnoreCase("cssselector")){
+//			WebElement drpdown=driver.findElement(By.cssSelector(locatorvalue));
+//			Select s=new Select(drpdown);
+//			
+//			s.selectByVisibleText(optionToSelect);
+//		}else if(locatortype.equalsIgnoreCase("linktext")){
+//			WebElement drpdown=driver.findElement(By.linkText(locatorvalue));
+//			Select s=new Select(drpdown);
+//			
+//			s.selectByVisibleText(optionToSelect);
+//		}else if(locatortype.equalsIgnoreCase("partiallinktext")){
+//			WebElement drpdown=driver.findElement(By.partialLinkText(locatorvalue));
+//			Select s=new Select(drpdown);
+//			
+//			s.selectByVisibleText(optionToSelect);
+//		}else if(locatortype.equalsIgnoreCase("xpath")){
+//			WebElement drpdown=driver.findElement(By.xpath(locatorvalue));
+//			Select s=new Select(drpdown);
+//			
+//			s.selectByVisibleText(optionToSelect);
+		
+		
+		     Select s=new Select(dropdown);
+		     s.selectByVisibleText(optionToSelect);
 		
 	}
 	
-	public void selectAction(WebDriver driver,String locatortype,String locatorvalue,String optionToSelect) {
-		if(locatortype.equalsIgnoreCase("id")){
-			
-			WebElement drpdown=driver.findElement(By.id(locatorvalue));
-			Select s=new Select(drpdown);
-			
-			s.selectByVisibleText(optionToSelect);
-			
-		}
-		else if(locatortype.equalsIgnoreCase("name")){
-			WebElement drpdown=driver.findElement(By.name(locatorvalue));
-			Select s=new Select(drpdown);
-			
-			s.selectByVisibleText(optionToSelect);
-		}
-		else if(locatortype.equalsIgnoreCase("classname")){
-			WebElement drpdown=driver.findElement(By.className(locatorvalue));
-			Select s=new Select(drpdown);
-			
-			s.selectByVisibleText(optionToSelect);
-		}else if(locatortype.equalsIgnoreCase("cssselector")){
-			WebElement drpdown=driver.findElement(By.cssSelector(locatorvalue));
-			Select s=new Select(drpdown);
-			
-			s.selectByVisibleText(optionToSelect);
-		}else if(locatortype.equalsIgnoreCase("linktext")){
-			WebElement drpdown=driver.findElement(By.linkText(locatorvalue));
-			Select s=new Select(drpdown);
-			
-			s.selectByVisibleText(optionToSelect);
-		}else if(locatortype.equalsIgnoreCase("partiallinktext")){
-			WebElement drpdown=driver.findElement(By.partialLinkText(locatorvalue));
-			Select s=new Select(drpdown);
-			
-			s.selectByVisibleText(optionToSelect);
-		}else if(locatortype.equalsIgnoreCase("xpath")){
-			WebElement drpdown=driver.findElement(By.xpath(locatorvalue));
-			Select s=new Select(drpdown);
-			
-			s.selectByVisibleText(optionToSelect);
-		}
-	}
 	
 	
-	
-	public void selectFromCalendar(WebDriver driver,String locatortype,String locatorvalue,String dateToSelect) {
-		if(locatortype.equalsIgnoreCase("id")){
-			
-			WebElement calendarElement=driver.findElement(By.id(locatorvalue));
-			calendarElement.clear();
-			
-			String[] splitfromDate=dateToSelect.split("/");
-			
-			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
-			
-			calendarElement.sendKeys(requiredDateToSelect);
-			
-		}
-		else if(locatortype.equalsIgnoreCase("name")){
-			WebElement calendarElement=driver.findElement(By.name(locatorvalue));
-			calendarElement.clear();
-			
-			String[] splitfromDate=dateToSelect.split("/");
-			
-			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
-			
-			calendarElement.sendKeys(requiredDateToSelect);
-		}
-		else if(locatortype.equalsIgnoreCase("classname")){
-			WebElement calendarElement=driver.findElement(By.className(locatorvalue));
-			calendarElement.clear();
-			
-			String[] splitfromDate=dateToSelect.split("/");
-			
-			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
-			
-			calendarElement.sendKeys(requiredDateToSelect);
-		}else if(locatortype.equalsIgnoreCase("cssselector")){
-			WebElement calendarElement=driver.findElement(By.cssSelector(locatorvalue));
-			calendarElement.clear();
-			
-			String[] splitfromDate=dateToSelect.split("/");
-			
-			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
-			
-			calendarElement.sendKeys(requiredDateToSelect);
-		}else if(locatortype.equalsIgnoreCase("linktext")){
-			WebElement calendarElement=driver.findElement(By.linkText(locatorvalue));
-			calendarElement.clear();
-			
-			String[] splitfromDate=dateToSelect.split("/");
-			
-			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
-			
-			calendarElement.sendKeys(requiredDateToSelect);
-		}else if(locatortype.equalsIgnoreCase("partiallinktext")){
-			WebElement calendarElement=driver.findElement(By.partialLinkText(locatorvalue));
-			calendarElement.clear();
-			
-			String[] splitfromDate=dateToSelect.split("/");
-			
-			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
-			
-			calendarElement.sendKeys(requiredDateToSelect);
-		}else if(locatortype.equalsIgnoreCase("xpath")){
-			WebElement calendarElement=driver.findElement(By.xpath(locatorvalue));
-			calendarElement.clear();
-			
-			String[] splitfromDate=dateToSelect.split("/");
-			
-			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
-			
-			calendarElement.sendKeys(requiredDateToSelect);
-		}
+	public void selectFromCalendar(WebDriver driver,WebElement calendarElement,String dateToSelect) {
+//		if(locatortype.equalsIgnoreCase("id")){
+//			
+//			WebElement calendarElement=driver.findElement(By.id(locatorvalue));
+//			calendarElement.clear();
+//			
+//			String[] splitfromDate=dateToSelect.split("/");
+//			
+//			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
+//			
+//			calendarElement.sendKeys(requiredDateToSelect);
+//			
+//		}
+//		else if(locatortype.equalsIgnoreCase("name")){
+//			WebElement calendarElement=driver.findElement(By.name(locatorvalue));
+//			calendarElement.clear();
+//			
+//			String[] splitfromDate=dateToSelect.split("/");
+//			
+//			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
+//			
+//			calendarElement.sendKeys(requiredDateToSelect);
+//		}
+//		else if(locatortype.equalsIgnoreCase("classname")){
+//			WebElement calendarElement=driver.findElement(By.className(locatorvalue));
+//			calendarElement.clear();
+//			
+//			String[] splitfromDate=dateToSelect.split("/");
+//			
+//			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
+//			
+//			calendarElement.sendKeys(requiredDateToSelect);
+//		}else if(locatortype.equalsIgnoreCase("cssselector")){
+//			WebElement calendarElement=driver.findElement(By.cssSelector(locatorvalue));
+//			calendarElement.clear();
+//			
+//			String[] splitfromDate=dateToSelect.split("/");
+//			
+//			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
+//			
+//			calendarElement.sendKeys(requiredDateToSelect);
+//		}else if(locatortype.equalsIgnoreCase("linktext")){
+//			WebElement calendarElement=driver.findElement(By.linkText(locatorvalue));
+//			calendarElement.clear();
+//			
+//			String[] splitfromDate=dateToSelect.split("/");
+//			
+//			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
+//			
+//			calendarElement.sendKeys(requiredDateToSelect);
+//		}else if(locatortype.equalsIgnoreCase("partiallinktext")){
+//			WebElement calendarElement=driver.findElement(By.partialLinkText(locatorvalue));
+//			calendarElement.clear();
+//			
+//			String[] splitfromDate=dateToSelect.split("/");
+//			
+//			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
+//			
+//			calendarElement.sendKeys(requiredDateToSelect);
+//		}else if(locatortype.equalsIgnoreCase("xpath")){
+//			WebElement calendarElement=driver.findElement(By.xpath(locatorvalue));
+//			calendarElement.clear();
+//			
+//			String[] splitfromDate=dateToSelect.split("/");
+//			
+//			String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
+//			
+//			calendarElement.sendKeys(requiredDateToSelect);
+//		}
+		
+		calendarElement.clear();
+		String[] splitfromDate=dateToSelect.split("/");
+		String requiredDateToSelect=splitfromDate[2]+"-"+splitfromDate[0]+"-"+splitfromDate[1];
+		calendarElement.sendKeys(requiredDateToSelect);
 	}
 	
 	
@@ -248,7 +258,7 @@ public class BasePage {
 		
 	}
 
-	public static void closeBrowser(WebDriver driver){
+	public void closeBrowser(WebDriver driver){
 		driver.close();
 	}
 	

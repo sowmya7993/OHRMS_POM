@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6291" started-at="2020-06-27T07:02:55Z" finished-at="2020-06-27T07:03:01Z">
+  <suite name="Default suite" duration-ms="26832" started-at="2020-06-30T06:57:13Z" finished-at="2020-06-30T06:57:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6291" started-at="2020-06-27T07:02:55Z" finished-at="2020-06-27T07:03:01Z">
-      <class name="com.tests.Dummy">
-        <test-method status="PASS" signature="f()[pri:0, instance:com.tests.Dummy@5f341870]" name="f" duration-ms="6231" started-at="2020-06-27T12:32:55Z" finished-at="2020-06-27T12:33:01Z">
+    <test name="Default test" duration-ms="26832" started-at="2020-06-30T06:57:13Z" finished-at="2020-06-30T06:57:40Z">
+      <class name="com.tests.AssignLeaveTest">
+        <test-method status="PASS" signature="assignLeave()[pri:0, instance:com.tests.AssignLeaveTest@5f341870]" name="assignLeave" duration-ms="26700" started-at="2020-06-30T12:27:13Z" finished-at="2020-06-30T12:27:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-      </class> <!-- com.tests.Dummy -->
+        </test-method> <!-- assignLeave -->
+      </class> <!-- com.tests.AssignLeaveTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

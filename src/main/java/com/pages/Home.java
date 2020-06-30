@@ -30,15 +30,135 @@ public class Home extends BasePage{
 	@FindBy(id="btnSave")
 	WebElement save;
 	
+	@FindBy(id="menu_pim_viewPimModule")
+	WebElement  pim;
+	
+	@FindBy(id="menu_pim_addEmployee")
+	WebElement  addEmployee;
+	
+	@FindBy(id="firstName")
+	WebElement  emp_firstName;
+	
+	@FindBy(id="lastName")
+	WebElement  emp_lastName;
+	
+	@FindBy(linkText="Leave")
+	WebElement  leave;
+	
+	@FindBy(id="menu_leave_assignLeave")
+	WebElement assingLeave;
+	
+	@FindBy(name="assignleave[txtEmployee][empName]")
+	WebElement assignleave_empName;
+	
+	@FindBy(id="assignleave_txtLeaveType")
+	WebElement leaveType;
+
+	@FindBy(id="assignleave_txtFromDate")
+	WebElement fromDate;
+	
+	@FindBy(id="assignleave_txtToDate")
+	WebElement toDate;
+
+	@FindBy(id="assignleave_partialDays")
+	WebElement partialDays;
+	
+	@FindBy(id="assignleave_txtComment")
+	WebElement comment;
+	
+	@FindBy(id="assignBtn")
+	WebElement assign;
+	
+	WebDriver driver;
+	
 	//Initializing the Page Objects:
    public Home(WebDriver driver){
+	   
+	   	this.driver= driver;
 	     PageFactory.initElements(driver, this);
    }
    
    
-   public void userRegistration() {
+   public void userRegistration() {   
+//	   System.out.println("the valude of driver in userRegistration fuction is "+driver);
+	   
+	   waitForElement(driver,admin,"10");
+	   clickAction(driver,admin);
+	   
+	   waitForElement(driver,addButton,"10");
+	   clickAction(driver,addButton);
+	   
+	   waitForElement(driver,employee,"10");
+	   typeAction(driver, employee,"Hannah Flores");
+	   
+	   waitForElement(driver,username,"10");
+	   typeAction(driver, username,"hybriduserpom");
+	   
+		waitForElement(driver,password,"10");
+		typeAction(driver, password,"hybriduser123#");
+		
+		waitForElement(driver,confirmPassword,"10");
+		typeAction(driver, confirmPassword,"hybriduser123#");
+		
+		waitForElement(driver,save,"10");
+		clickAction(driver,save);
 	   
    }
 	
+  public void AssignLeave() {
+	   System.out.println("the valude of driver in AssignLeave fuction is "+driver);
+   }
+  
+  public void employeeRegistration() {
+	  
+	  waitForElement(driver,pim,"10");
+	  clickAction(driver,pim);
+	  
+	  waitForElement(driver,addEmployee,"10");
+	  clickAction(driver,addEmployee);
+	  
+	  waitForElement(driver,emp_firstName,"10");
+	  typeAction(driver, emp_firstName,"emp_firstname_1");
+	  
+	  waitForElement(driver,emp_lastName,"10");
+	  typeAction(driver, emp_lastName,"emp_lastname_1");
+	  
+	  waitForElement(driver,save,"10");
+	  clickAction(driver,save);
+	 
+  }
+  
+  
+  public void assignLeave() {
+	  
+	  waitForElement(driver,leave,"10");
+	  clickAction(driver,leave);
+	  
+	  waitForElement(driver,assingLeave,"10");
+	  clickAction(driver,assingLeave);
+	  
+	  waitForElement(driver,assignleave_empName,"10");
+	  typeAction(driver, assignleave_empName,"Jasmine Morgan");
+	  
+	  waitForElement(driver,leaveType,"10");
+	  selectAction(driver,leaveType,"Maternity US");
+	  
+	  waitForElement(driver,fromDate,"10");
+	  selectFromCalendar(driver,fromDate,"05/28/2020");
+	  
+	  waitForElement(driver,toDate,"10");
+	  selectFromCalendar(driver,toDate,"08/28/2020");
+	  
+	  hitEnter(driver, toDate);
+	  
+	  waitForElement(driver,comment,"10");
+	  typeAction(driver, comment,"test");
+	  
+	  waitForElement(driver,assign,"10");
+	  clickAction(driver,assign);
+	  
+  }
+  
+  
 	
 }
