@@ -11,6 +11,8 @@ public class UserRegistrationTest {
   @Test
   public void  userRegistrationTest() throws Exception {
 	  
+	  String testCaseName="UserRegistrationTest";
+	  
 	  BasePage bp=new BasePage();
 	  WebDriver driver=bp.startBrowser();
 	  bp.openApplication(driver);

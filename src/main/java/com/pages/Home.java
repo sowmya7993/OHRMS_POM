@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.base.BasePage;
+import com.utilities.ExcelFileUtil;
 
 public class Home extends BasePage{
 	
@@ -129,35 +130,51 @@ public class Home extends BasePage{
   }
   
   
-  public void assignLeave() {
+  public void assignLeave( String testCaseName) throws Exception {
+	  
+	  ExcelFileUtil exlInput=new ExcelFileUtil();
+	  
 	  
 	  waitForElement(driver,leave,"10");
 	  clickAction(driver,leave);
 	  
-	  waitForElement(driver,assingLeave,"10");
+	  waitForElement(driver,assingLeave,"60");
 	  clickAction(driver,assingLeave);
 	  
 	  waitForElement(driver,assignleave_empName,"10");
-	  typeAction(driver, assignleave_empName,"Jasmine Morgan");
+	  String empName=exlInput.getTestData(exlInput, testCaseName, "EmployeeName");
+	  
+//	  typeAction(driver, assignleave_empName,"Jasmine Morgan");
+	  typeAction(driver, assignleave_empName,empName);
 	  
 	  waitForElement(driver,leaveType,"10");
-	  selectAction(driver,leaveType,"Maternity US");
-	  
+//	  selectAction(driver,leaveType,"Maternity US");
+	  String leaveTye=exlInput.getTestData(exlInput, testCaseName, "LeaveType");
+	  selectAction(driver,leaveType,leaveTye);
+	   
 	  waitForElement(driver,fromDate,"10");
-	  selectFromCalendar(driver,fromDate,"05/28/2020");
+//	  selectFromCalendar(driver,fromDate,"05/28/2020");
+	  String strfromDate=exlInput.getTestData(exlInput, testCaseName, "FromDate"); 
+	  selectFromCalendar(driver,fromDate,strfromDate);
 	  
 	  waitForElement(driver,toDate,"10");
-	  selectFromCalendar(driver,toDate,"08/28/2020");
+//	  selectFromCalendar(driver,toDate,"08/28/2020");
+	  String strtoDate=exlInput.getTestData(exlInput, testCaseName, "ToDate"); 
+	  selectFromCalendar(driver,toDate,strtoDate);
 	  
 	  hitEnter(driver, toDate);
 	  
 	  waitForElement(driver,comment,"10");
-	  typeAction(driver, comment,"test");
+//	  typeAction(driver, comment,"test");
+	  String strcomment=exlInput.getTestData(exlInput, testCaseName, "Comment"); 
+	  typeAction(driver, comment,strcomment);
 	  
 	  waitForElement(driver,assign,"10");
 	  clickAction(driver,assign);
 	  
   }
+  
+  
   
   
 	

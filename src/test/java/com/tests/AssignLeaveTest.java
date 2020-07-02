@@ -11,6 +11,8 @@ public class AssignLeaveTest {
   @Test
   public void assignLeave() throws Exception {
 	  
+	    String testCaseName="AssignLeave";
+	  
 	  	BasePage bp=new BasePage();
 		
 		WebDriver driver=bp.startBrowser();
@@ -19,8 +21,8 @@ public class AssignLeaveTest {
 		
 		Login lp= new Login(driver);	
 		
-		Home hp=lp.login("Admin", "admin123");
-		hp.assignLeave();
+		Home hp=lp.login("Admin", "Qedge123!@#");
+		hp.assignLeave(testCaseName);
 		
 		bp.closeBrowser(driver);
 		
