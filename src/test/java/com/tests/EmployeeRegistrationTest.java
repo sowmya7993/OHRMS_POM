@@ -12,6 +12,7 @@ public class EmployeeRegistrationTest {
   public void f() throws Exception {
 	 
 	  	BasePage bp=new BasePage();
+	  	String testCaseName="EmployeeRegistration";
 		
 		WebDriver driver=bp.startBrowser();
 		
@@ -20,7 +21,7 @@ public class EmployeeRegistrationTest {
 		Login lp= new Login(driver);	
 		
 		Home hp=lp.login("Admin", "admin123");
-		hp.employeeRegistration();
+		hp.employeeRegistration(testCaseName);
 		
 		bp.closeBrowser(driver);
 	  

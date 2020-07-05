@@ -21,7 +21,7 @@ public class AssignLeaveTest {
 		
 		Login lp= new Login(driver);	
 		
-		Home hp=lp.login("Admin", "Qedge123!@#");
+		Home hp=lp.login("Admin", "admin123");
 		hp.assignLeave(testCaseName);
 		
 		bp.closeBrowser(driver);

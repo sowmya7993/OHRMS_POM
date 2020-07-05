@@ -80,9 +80,11 @@ public class Home extends BasePage{
    }
    
    
-   public void userRegistration() {   
+   public void userRegistration(String testCaseName) throws Exception {   
 //	   System.out.println("the valude of driver in userRegistration fuction is "+driver);
 	   
+	   ExcelFileUtil exl=new ExcelFileUtil();
+		  
 	   waitForElement(driver,admin,"10");
 	   clickAction(driver,admin);
 	   
@@ -90,16 +92,20 @@ public class Home extends BasePage{
 	   clickAction(driver,addButton);
 	   
 	   waitForElement(driver,employee,"10");
-	   typeAction(driver, employee,"Hannah Flores");
+	   String testData=exl.getTestData(exl, testCaseName, "EmployeeName");  
+	   typeAction(driver, employee,testData);
 	   
 	   waitForElement(driver,username,"10");
-	   typeAction(driver, username,"hybriduserpom");
+	    testData=exl.getTestData(exl, testCaseName, "NewUserName");   
+	   typeAction(driver, username,testData);
 	   
 		waitForElement(driver,password,"10");
-		typeAction(driver, password,"hybriduser123#");
+		 testData=exl.getTestData(exl, testCaseName, "NewUserPassword");   
+		typeAction(driver, password,testData);
 		
 		waitForElement(driver,confirmPassword,"10");
-		typeAction(driver, confirmPassword,"hybriduser123#");
+		 testData=exl.getTestData(exl, testCaseName, "NewUserConfirmPassword");
+		typeAction(driver, confirmPassword,testData);
 		
 		waitForElement(driver,save,"10");
 		clickAction(driver,save);
@@ -110,7 +116,8 @@ public class Home extends BasePage{
 	   System.out.println("the valude of driver in AssignLeave fuction is "+driver);
    }
   
-  public void employeeRegistration() {
+  public void employeeRegistration(String testCaseName) throws Exception {
+	  ExcelFileUtil exlInput=new ExcelFileUtil();
 	  
 	  waitForElement(driver,pim,"10");
 	  clickAction(driver,pim);
@@ -119,10 +126,12 @@ public class Home extends BasePage{
 	  clickAction(driver,addEmployee);
 	  
 	  waitForElement(driver,emp_firstName,"10");
-	  typeAction(driver, emp_firstName,"emp_firstname_1");
+	  String testData=exlInput.getTestData(exlInput, testCaseName, "EmployeeFirstName");
+	  typeAction(driver, emp_firstName,testData);
 	  
 	  waitForElement(driver,emp_lastName,"10");
-	  typeAction(driver, emp_lastName,"emp_lastname_1");
+	   testData=exlInput.getTestData(exlInput, testCaseName, "EmployeeLastName");
+	  typeAction(driver, emp_lastName,testData);
 	  
 	  waitForElement(driver,save,"10");
 	  clickAction(driver,save);
@@ -133,7 +142,6 @@ public class Home extends BasePage{
   public void assignLeave( String testCaseName) throws Exception {
 	  
 	  ExcelFileUtil exlInput=new ExcelFileUtil();
-	  
 	  
 	  waitForElement(driver,leave,"10");
 	  clickAction(driver,leave);
